@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ak9see(_8*8nu*8pn$%ij6)9=hjo4t_s!q+tb-e03akyr97^g!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -85,16 +85,27 @@ WSGI_APPLICATION = 'listdatastr.wsgi.application'
 
 # DATABASES['default'] = dj_database_url.config()
 
-DATABASES ={
-    'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'dMgueGhfthdaNDtKinqwMtQdpCQmTbUJ',
-        'HOST': 'roundhouse.proxy.rlwy.net' ,
-        'PORT': '50196',
+# DATABASES ={
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'dMgueGhfthdaNDtKinqwMtQdpCQmTbUJ',
+#         'HOST': 'roundhouse.proxy.rlwy.net' ,
+#         'PORT': '50196',
+#     }
+# }
+DATABASES = {
+    "default":{
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db. sqlites3",
+
     }
 }
+
+DATABASES['default'] = dj_database_url.parse("postgres://listdatadjango_user:pIlhCGB0cwrPaSYbPFsefaxifm1USALM@dpg-cpjel1kf7o1s73buvshg-a.oregon-postgres.render.com/listdatadjango")
+     
+
 
 
 # Password validation
