@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dictionary Operations</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dictionary Operations</h1>
+    
+    <p>Current Dictionary: {{ dict }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="key" placeholder="Key to Add">
+        <input type="text" name="value" placeholder="Value to Add">
+        <button type="submit" name="action" value="add">Add Key-Value Pair</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="key" placeholder="Key to Remove">
+        <button type="submit" name="action" value="remove">Remove Key-Value Pair</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="key" placeholder="Key to Modify">
+        <input type="text" name="new_value" placeholder="New Value">
+        <button type="submit" name="action" value="modify">Modify Value</button>
+    </form>
+    <button onclick="location.href='{% url 'index' %}'">Back to Main Menu</button>
+</body>
+</html>

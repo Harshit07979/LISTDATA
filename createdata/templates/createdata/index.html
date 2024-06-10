@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Structure Operations</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Data Structure</h1>
+    
+    <button onclick="location.href='{% url 'list_operations' %}'">List</button>
+    <button onclick="location.href='{% url 'dict_operations' %}'">Dictionary</button>
+    <button onclick="location.href='{% url 'set_operations' %}'">Set</button>
+    <button onclick="location.href='{% url 'export_pdf' %}'">Export as PDF</button>
+    <button onclick="location.href='{% url 'export_excel' %}'">Export as Excel</button>
+</body>
+</html>

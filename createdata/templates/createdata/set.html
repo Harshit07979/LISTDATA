@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Operations</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Set Operations</h1>
+    
+    <p>Current Set: {{ set }}</p>
+    {% if exists is not None %}
+        <p>Element exists: {{ exists }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="element" placeholder="Element to Add">
+        <button type="submit" name="action" value="add">Add Element</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="element" placeholder="Element to Remove">
+        <button type="submit" name="action" value="remove">Remove Element</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="element" placeholder="Element to Check">
+        <button type="submit" name="action" value="check">Check Element</button>
+    </form>
+    <button onclick="location.href='{% url 'index' %}'">Back to Main Menu</button>
+</body>
+</html>

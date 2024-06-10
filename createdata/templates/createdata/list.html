@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Operations</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>List Operations</h1>
+    
+    <p>Current List: {{ list }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="element" placeholder="Element to Add">
+        <button type="submit" name="action" value="add">Add Element</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="element" placeholder="Element to Remove">
+        <button type="submit" name="action" value="remove">Remove Element</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="index" placeholder="Index to Modify">
+        <input type="text" name="new_element" placeholder="New Element">
+        <button type="submit" name="action" value="modify">Modify Element</button>
+    </form>
+    <button onclick="location.href='{% url 'index' %}'">Back to Main Menu</button>
+</body>
+</html>
